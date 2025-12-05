@@ -1,6 +1,8 @@
 ﻿# Email-Account-Generator-By-JAVA
 This is core/Basic JAVA project To Create Email by terminal. Practice Purpose
 
+![image alt](https://github.com/ChemistCoder90/Email-Account-Generator-By-JAVA/blob/e2ac3e043611f9a99d212eb5b04a6ac178a24a22/Problem%20Statement.png)
+
 Run On Terminal(Navigate to directory): javac EmailApp.java && java EmailApp
 
 What's New(for me):
