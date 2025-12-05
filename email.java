@@ -1,3 +1,4 @@
+import java.io.Console;
 import java.util.Scanner;
 
 public class email {
@@ -13,14 +14,15 @@ public class email {
   public email(String FirstName, String LastName) {
     this.FirstName = FirstName;
     this.LastName = LastName;
-    System.out.println(FirstName+" "+LastName);
+    // System.out.println(FirstName+" "+LastName);
     SetDept();
     emailid();
     Randompass(passlength);
     EmployeeInfo();
-    boolean choice=true;
     System.out.println("Do You want to Change Password?\n1. Yes\n2. No");
     int x=input.nextInt();
+    input.nextLine();//This is for clear buffer. while enter number on previous line.
+   // pressing enter, newline character will stay on buffer.
     if(x==1) ChangePassword();
     else System.out.println("Have a Nice day.");
   }
@@ -37,7 +39,7 @@ public class email {
     else Department="";
   }
   public void emailid(){
-    emailID=(FirstName+"."+LastName+"@"+Department+"."+Company);
+    emailID=(FirstName.toLowerCase()+"."+LastName.toLowerCase()+"@"+Department.toLowerCase()+"."+Company.toLowerCase());
   }
   public void Randompass(int passlength){
     String pass="asdfghjklzxcvbnmqwertyuiop1234567890@#%^&";
@@ -49,7 +51,12 @@ public class email {
     Password=new String(pas);
   }
   public void ChangePassword(){
-    Password=input.nextLine();
+    System.out.print("Please Enter a password(Will be hidden): ");
+    // Password=input.nextLine(); //Here nextLine() is not using cause it shows password written.
+    Console consoleInput=System.console();
+    char[] Passchar=consoleInput.readPassword();
+    Password=new String(Passchar);
+    System.out.println("Password Updated.\nHave a nice Day.\n");
   }
   public void EmployeeInfo(){
     System.out.println("\nEmployee Name: "+FirstName+" "+LastName);
@@ -58,4 +65,5 @@ public class email {
     System.out.println("Mail Capacity: "+MailBoxCapacity+"mb");
     System.out.println("Temporary Password: "+Password+"\n");
   }
+  
 }
