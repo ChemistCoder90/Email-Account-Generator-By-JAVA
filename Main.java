@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class EmailApp{
+public class Main{
   public static void main(String[] Args){
     Scanner scanner=new Scanner(System.in);
     System.out.println("Please Enter ur Firstname, Lastname");
